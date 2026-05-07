@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wuthering Waves x Cyberpunk Edgerunners collab</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #000;
+      color: #fff;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    #timer {
+      font-size: 5.5rem;
+      font-weight: bold;
+      letter-spacing: 0.8rem;
+      margin-bottom: 60px;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+
+    #enter-btn {
+      padding: 18px 60px;
+      font-size: 1.4rem;
+      background: transparent;
+      color: #666;
+      border: 2px solid #333;
+      cursor: not-allowed;
+      transition: all 0.4s ease;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    #enter-btn.enabled {
+      color: #fff;
+      border-color: #fff;
+      cursor: pointer;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    }
+
+    #enter-btn.enabled:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    .message {
+      margin-top: 40px;
+      font-size: 1.1rem;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="timer">00 : 00 : 00 : 00</div>
+  
+  <button id="enter-btn">ENTER</button>
+  
+  <div class="message" id="status">Site locked until launch</div>
+
+  <script>
+    // ================== SET YOUR LAUNCH TIME HERE ==================
+    const launchDate = new Date("2026-05-09T00:00:01").getTime();
+    // Format: YYYY-MM-DDTHH:MM:SS  (local time)
+
+    const timerEl = document.getElementById('timer');
+    const btn = document.getElementById('enter-btn');
+    const statusEl = document.getElementById('status');
+
+    function updateTimer() {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      if (distance <= 0) {
+        // Time's up
+        timerEl.textContent = "00 : 00 : 00 : 00";
+        btn.classList.add('enabled');
+        statusEl.textContent = "Access granted";
+        
+        // Button now works
+        btn.onclick = function() {
+          window.location.href = "Bibi.html";
+        };
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      timerEl.textContent = 
+        `${days.toString().padStart(2, '0')} : ${hours.toString().padStart(2, '0')} : ${minutes.toString().padStart(2, '0')} : ${seconds.toString().padStart(2, '0')}`;
+    }
+
+    // Update every second
+    setInterval(updateTimer, 1000);
+    updateTimer(); // Initial call
+  </script>
+</body>
+</html>

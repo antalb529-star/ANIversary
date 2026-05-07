@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Picture Cards</title>
+  <script src="download.js" defer></script>
+  <style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: rgba(176, 93, 128, 0.16);
+  color: #212121;
+}
+
+.hero {
+  background: linear-gradient(135deg, #eb74f1 0%, #dac772 100%);
+  color: white;
+  padding: 80px 24px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  letter-spacing: 0.04em;
+}
+
+.hero p {
+  max-width: 760px;
+  margin: 18px auto 0;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  opacity: 0.92;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  padding: 40px 24px 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.card {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.18);
+}
+
+/* ==================== IMAGE - EDGE TO EDGE ==================== */
+.card img {
+  width: 100% !important;
+  height: 240px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  margin: 0 !important;
+  padding: 0 !important;
+  flex-shrink: 0;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+}
+
+/* ==================== CONTENT ==================== */
+.card-content {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.card-title {
+  font-size: 1.05rem;
+  margin: 0;
+  font-weight: 700;
+  text-align: center;
+}
+
+.card-text {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #575757;
+  line-height: 1.6;
+  text-align: center;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1180px) {
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 740px) {
+  .hero {
+    border-radius: 0 0 30px 30px;
+  }
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+  
+  .card img {
+    height: 220px;
+  }
+}
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>Picture Gallery</h1>
+    <p>That's not a lot... let's fill it up next year shall we?</p>
+    <p>Double click to download btw</p>
+  </section>
+
+  <main class="gallery">
+    <article class="card">
+      <img src="pics/1.jpg">
+      <div class="card-content">
+        <h2 class="card-title">Random ahh picture #1</h2>
+        <p class="card-text">Idk the context but holy shit look at my face </p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/1000007980.jpg">
+      <div class="card-content">
+        <h2 class="card-title">Part 2</h2>
+        <p class="card-text">WHY IS THE QUALITY SO BAD ON THESE</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (1).jpg">
+      <div class="card-content">
+        <h2 class="card-title">Part 3</h2>
+        <p class="card-text">Fun fact: All of the pics from here including this are named dih (1-40) on my pc</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (2).jpg" alt="Mountain lake">
+      <div class="card-content">
+        <h2 class="card-title">Mountain Lake</h2>
+        <p class="card-text">Ts so us</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (3).jpg">
+      <div class="card-content">
+        <h2 class="card-title">Tongue kiss</h2>
+        <p class="card-text">Lowkey remember u telling me not to actually touch your tongue here</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (4).jpg">
+      <div class="card-content">
+        <h2 class="card-title">Uhhhhhhh</h2>
+        <p class="card-text">Might be a douplicate but Ion care :3</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (5).jpg">
+      <div class="card-content">
+        <h2 class="card-title">Jezus</h2>
+        <p class="card-text">Imagine your girl is looking like a genuine model so u js hit that face like:</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (6).jpg">
+      <div class="card-content">
+        <h2 class="card-title">Sexy</h2>
+        <p class="card-text">First one I don't hate my face on</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (7).jpg">
+      <div class="card-content">
+        <h2 class="card-title">No idea what to put here</h2>
+        <p class="card-text">Look at that smug ass look <br> Bro KNOWS he won</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (8).jpg">
+      <div class="card-content">
+        <h2 class="card-title">AWWWWWW</h2>
+        <p class="card-text">CUTIE PATOOTIE HAND HOLDING O MAI GAAAAWD</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (9).jpg">
+      <div class="card-content">
+        <h2 class="card-title">Ts bout to be us at my place</h2>
+        <p class="card-text">God knows how much time has passed but you're still just as yummy</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (10).jpg">
+      <div class="card-content">
+        <h2 class="card-title">Starting to think forcing a title on each pic was a bad idea</h2>
+        <p class="card-text">But look how pretty we look</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (11).jpg">
+      <div class="card-content">
+        <h2 class="card-title">So what did u eat today</h2>
+        <p class="card-text">Idk what's with your face here but it looks extra cute</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (12).jpg">
+      <div class="card-content">
+        <h2 class="card-title">6 7</h2>
+        <p class="card-text">I lowkey look like a child here. And u too damn</p>
+      </div>
+    </article>
+    <article class="card">
+      <img src="pics/dih (13).jpg">
+      <div class="card-content">
+        <h2 class="card-title">Eat it up eat it eat it</h2>
+        <p class="card-text">Lowkey bite me more it makes me happi</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (14).jpg">
+      <div class="card-content">
+        <h2 class="card-title">FINALLY A DIFFERENT DAY</h2>
+        <p class="card-text">That trip was long as fuck but it was worth it cus u looked so cute and I love skating</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (15).jpg">
+      <div class="card-content">
+        <h2 class="card-title">Price of being pretty</h2>
+        <p class="card-text">U had A big red X on ur back</p>
+      </div>
+    </article>
+    <article class="card">
+      <img src="pics/dih (16).jpg">
+      <div class="card-content">
+        <h2 class="card-title">Random pic part idk</h2>
+        <p class="card-text">I dunno the context so I'll js say you're preppy</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (17).jpg">
+      <div class="card-content">
+        <h2 class="card-title">looks better downloaded</h2>
+        <p class="card-text">That was a peak photo session ngl</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (18).jpg">
+      <div class="card-content">
+        <h2 class="card-title">Still my background btw</h2>
+        <p class="card-text">Aren't we just adorable?</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (19).jpg">
+      <div class="card-content">
+        <h2 class="card-title">Peak meetup with peak friends</h2>
+        <p class="card-text">They love u btw</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (20).jpg">
+      <div class="card-content">
+        <h2 class="card-title">Flower Field</h2>
+        <p class="card-text">I look SO awkward</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (21).jpg">
+      <div class="card-content">
+        <h2 class="card-title">Yummy</h2>
+        <p class="card-text">Mine is lemon and yours was like dragon fruit and smth weird</p>
+      </div>
+    </article>    
+
+    <article class="card">
+      <img src="pics/dih (22).jpg">
+      <div class="card-content">
+        <h2 class="card-title">Finally halfway there</h2>
+        <p class="card-text">Badminton break cus the baby can't handle a bit of heat UwU</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (23).jpg">
+      <div class="card-content">
+        <h2 class="card-title">The mask does not help</h2>
+        <p class="card-text">It felt SO weird</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (24).jpg">
+      <div class="card-content">
+        <h2 class="card-title">Yummy part 2</h2>
+        <p class="card-text">I did NOT understand that I'm supposed to show my ice cweam. Also this should be higher up wtf?</p>
+      </div>
+    </article>
+    <article class="card">
+      <img src="pics/dih (25).jpg">
+      <div class="card-content">
+        <h2 class="card-title">Why does my mask look sm better?</h2>
+        <p class="card-text">AND WHY IS THE ORDER ALL FUCKED???</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (26).jpg">
+      <div class="card-content">
+        <h2 class="card-title">Badminton break part 2</h2>
+        <p class="card-text">Why isn't this with the other one</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (27).jpg">
+      <div class="card-content">
+        <h2 class="card-title">Badminton break part 3</h2>
+        <p class="card-text">They do not pay me enough to fix the order of these pics</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (28).jpg">
+      <div class="card-content">
+        <h2 class="card-title">Badminton break part 4</h2>
+        <p class="card-text">I look like a jew and you look like someone beautiful trying to fake being ugly</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (29).jpg">
+      <div class="card-content">
+        <h2 class="card-title">Definitely a duplicate</h2>
+        <p class="card-text">How did this even happen bro</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (30).jpg">
+      <div class="card-content">
+        <h2 class="card-title">Omg</h2>
+        <p class="card-text">WHENEVER YOU WEAR MY CLOTHES THEY LOOK SO GOOD ON U</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (31).jpg">
+      <div class="card-content">
+        <h2 class="card-title">Look at the happy couple</h2>
+        <p class="card-text">This is such a pretty and cute pic</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (32).jpg">
+      <div class="card-content">
+        <h2 class="card-title">Too much butter....</h2>
+        <p class="card-text">They were yummy tho. And VERY pretty</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (33).jpg">
+      <div class="card-content">
+        <h2 class="card-title">You look so pretty on all of these</h2>
+        <p class="card-text">But this should NOT be here</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (34).jpg">
+      <div class="card-content">
+        <h2 class="card-title">Holy quality</h2>
+        <p class="card-text">Holy quality</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (35).jpg">
+      <div class="card-content">
+        <h2 class="card-title">Pretty little baby being held</h2>
+        <p class="card-text">That photoshoot ended with making out btw</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (36).jpg">
+      <div class="card-content">
+        <h2 class="card-title">Awww</h2>
+        <p class="card-text">More cutesy handholding? I'm in</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (37).jpg">
+      <div class="card-content">
+        <h2 class="card-title">And even moreeeeeeeee</h2>
+        <p class="card-text">I've complained sm about duplicates and order that the coding program is literally suggesting complaining about it</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (38).jpg">
+      <div class="card-content">
+        <h2 class="card-title">Sleepy baby</h2>
+        <p class="card-text">On the way back from family park</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (39).jpg">
+      <div class="card-content">
+        <h2 class="card-title">Absolutely a dupe</h2>
+        <p class="card-text">By the way there's more pics from meetups of just you but I think that'd ruin the point</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="pics/dih (40).jpg">
+      <div class="card-content">
+        <h2 class="card-title">Still a peak photoshoot</h2>
+        <p class="card-text">This is the end of part one. Let's make more!!!!</p>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
